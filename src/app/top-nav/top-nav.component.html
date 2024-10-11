@@ -1,0 +1,65 @@
+<div>
+
+    <header id="main-header" class="main-header sticky-top sticky-top navigation" [ngClass]="{ 'scrolled': isScrolled }">
+
+        <div class=container>
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent bs-none py-0">
+                <a class="navbar-brand py-0" href="index.html"><img class="img-fluid" style="height:100px" src="/images/FullLogo_Transparent.png" alt="tutorzila"></a>
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation">
+                <i class="fa-solid fa-bars" (click)="toggleMenu()"></i></button>
+                <div #menuOption class="collapse navbar-collapse text-center" id=navigation>
+                    <ul class="navbar-nav mx-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" (click)="navigateToDashboard('/dashboard')">Dashboard</a></li>
+                        <li>
+                            <li class="nav-item">
+                                <a class="nav-link" (click)="navigateToDashboard('/student')">Student</a></li>
+                            <li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" (click)="navigateToDashboard('/tutor-profile')">Tutor Profile</a></li>
+                                <!-- <li>
+
+                                <div style="margin-left: 10px;margin-right: 5px;;" (click)="navigateToDashboard('/tutor-profile')">Tutor Profile</div>
+                        
+                            </li> -->
+                                <li class="nav-item"><a class="nav-link" href="index.html">Requests</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.html">Messages</a></li>
+                    </ul>
+                    <div class="menuAction">
+                        <button class="btn btn-outline-primary ml-lg-4 " (click)="navigateToDashboard('/tutor-list')">Find Tutors</button>
+                        <button class="btn btn-primary ml-lg-4 " (click)="openLoginPopup()">Sign In</button>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+</div>
+<!-- <div>
+    <router-outlet></router-outlet>
+</div> -->
+
+
+<!-- <header id="main-header" class=" main-header sticky-top navigation" [ngClass]="{ 'scrolled': isScrolled }">
+    <div class=container>
+        <nav class="navbar navbar-expand-lg navbar-light bg-transparent bs-none py-0">
+            <a class="navbar-brand py-0" href="index.html"><img class="img-fluid" style="height:100px" src="images/FullLogo_Transparent.png" alt="tutorzila"></a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation" (click)="expandMenus()">
+                    <i class="fa-solid fa-bars"></i></button>
+            <div [ngClass]="menus == true ? 'menusVisible' : 'menuHide' " class="menu-align text-center" id=navigation>
+                <ul class="navbar-nav mx-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Students</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Requests</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Messages</a></li>
+                </ul>
+
+                <button class="btn btn-outline-primary ml-lg-4 ">Find Tutors</button>
+                <button class="btn btn-primary ml-lg-4 " (click)="openLoginPopup()">Sign In</button>
+
+            </div>
+        </nav>
+    </div>
+
+</header> -->

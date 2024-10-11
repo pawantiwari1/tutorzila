@@ -287,38 +287,35 @@ mat-divider {
     ;
 }
 
-// ::ng-deep .icon_parent {
-//     display: flex;
-//     justify-content: flex-end;
-//     margin-bottom: 12px;
-//     cursor: pointer;
-// }
-// ::ng-deep .type_contianer{
-//     display:flex;
-//     flex-flow: row wrap;
-//     justify-content: space-between;
-//     grid-gap: 16px;
-// }
-// ::ng-deep .card_block_class{
-//     display:flex;
-//     grid-gap: 12px;
-//     align-items: center;
-//     height:90px;
-//     width: 47%;
-//     background-color: var(--ais-bg-active-code1);
-//     border-radius: 8px;
-//     font-family:Inter;
-//     img{
-//         margin-left:14px;
-//     }
-//     ::ng-deep a{
-//         font-weight: 400;
-//         cursor: pointer;
-//     }
-// }
-// ::ng-deep .create_pipeline_type .mat-dialog-container {
-//     // padding:0px;
-//     overflow: hidden;
-//     border-radius: 8px;
-//     background-color: var(--ais-bg-color2);
-// }
+.tutor-card-i {
+    margin: 10px;
+    color: #de6262;
+}
+
+.tutor-card-span {
+    display: block;
+    background: #f5ebeb;
+    padding: 15px;
+    border-radius: 35px;
+    margin: 5px;
+}
+
+.user-type-card {
+    padding: 15px;
+    border: 1 px solid #495057;
+    color: #495057;
+    font-weight: 600;
+    border: 1px solid #ced4da;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.user-type-card:hover {
+    background: #de6262;
+    color: #fff;
+}
+
+.card-input-element:checked+.user-type-card {
+    background: #de6262;
+    color: #fff;
+}

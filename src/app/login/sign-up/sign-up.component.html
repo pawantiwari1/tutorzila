@@ -1,0 +1,83 @@
+<div class="login-form">
+    <div class="popup-header">
+        <mat-icon (click)="closeDialog()">close</mat-icon>
+    </div>
+    <div class="header-content">
+        <h6>Sign Up</h6>
+    </div>
+
+
+    <form [formGroup]="signUpForm" class="loginForm">
+        <div class="form-content">
+            <div class="form-row m-3">
+                <div class="form-group col-lg-12 col-md-12">
+                    <label for="email">Name *</label> <input type="text" class="form-control" formControlName="name" id="name" placeholder="Full Name ">
+                    <!-- <span class="form-error" ng-show="signin.email.$error.required && signin.email.$dirty">Email
+                        address is required</span> -->
+                    <!-- <span class="form-error" ng-show="signin.email.$error.pattern">Email address
+                        not valid</span> -->
+
+                </div>
+
+                <div class="form-group col-lg-12 col-md-12">
+                    <label for="email">Email Address *</label> <input type="email" class="form-control" formControlName="email" id="email" name="email" placeholder="Email Address">
+                    <!-- <span class="form-error" ng-show="signin.email.$error.required && signin.email.$dirty">Email
+                        address is required</span> -->
+                    <!-- <span class="form-error" ng-show="signin.email.$error.pattern">Email address
+                        not valid</span> -->
+
+                </div>
+                <div class="form-group col-lg-12 col-md-12">
+                    <label for="password"> Phone *</label>
+                    <input type="tel" class="form-control" formControlName="phone" placeholder="Phone Number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    <!-- <span class="form-error" ng-show="signin.password.$error.required && signin.password.$dirty">Password
+                        is required</span> -->
+
+                </div>
+
+                <div class="form-group col-md-12">
+                    <div class="row">
+                        <div class="col-6">
+                            <label class="w-100"> 
+                                <input type="radio" name="typeOfUSer" value="PARENT" class="card-input-element d-none" formControlName="typeOfUSer" />
+                                <div class="user-type-card d-flex">
+                                    <div class="">
+                                        <span><i class="fa fa-envelope"></i> I am a Parent</span>
+                                    </div>
+
+                                </div>
+                            </label>
+                        </div>
+                        <div class="col-6">
+                            <label class="w-100">
+                                 <input type="radio" name="typeOfUSer" value="TUTOR" formControlName="typeOfUSer" class="card-input-element d-none" />
+                                <div class="user-type-card d-flex">
+                                    <div class="">
+                                        <span><i class="fa fa-envelope"></i> I am a Tutor</span>
+
+                                    </div>
+
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- <span class="form-error" ng-show="signup.type.$error.required && signup.type.$dirty">User
+                        selection is required</span> -->
+
+                </div>
+
+                <div class="form-group col-lg-12 col-md-12">
+                    <button type="submit" style="width:100%" class="btn btn-primary btn-block " (click)="createAccount()">Sign up</button>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+    <mat-divider></mat-divider>
+    <div class="modal-footer d-flex justify-content-center">
+        <div class="signup-section">
+            Not a member yet? <a href="" (click)="signIn($event)" class="text-info"> Sign In</a>.
+        </div>
+    </div>
+</div>

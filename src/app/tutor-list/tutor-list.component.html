@@ -1,0 +1,67 @@
+<div class="tutor-list row justify-content-between align-items-center">
+    <h2 class="mb-4 text-center">Find a tutor in easiest way with tutorzila
+    </h2>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <form name="findTutor" class="form-tz p-2">
+                    <div class="form-content">
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <select class="form-control category" (change)="selectedClass($event)">
+                                    <option *ngFor="let cls of classes" [value]="cls">{{cls}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3"></div>
+                            <div class="form-group col-md-3"></div>
+                            <div class="form-group col-md-3"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="row">
+
+            <ng-container *ngFor="let tutordetails of tutorListData">
+                <div class="col-md-6">
+
+                    <div class="card">
+                        <div class="card-body row ">
+                            <div class="col-md-4 col-sm-2">
+                                <div>
+                                    <img class="shadow-1-strong mb-4" src={{tutordetails.profile_pic}} alt="avatar" style="width: 150px;" />
+                                </div>
+                                <div>
+                                    <span><i class="fa fa-star"></i> {{tutordetails.ratings}} ({{tutordetails.total_review}})</span>
+                                </div>
+
+                            </div>
+                            <div class="col-md-8 col-sm-10">
+                                <h6>{{tutordetails.name}}</h6>
+                                <p>{{tutordetails.description}}</p>
+                                <div>
+                                    <span><i class="fa-solid fa-graduation-cap  tutor-card-i"></i> {{tutordetails.tutor_type}}  </span>
+                                    <span><i class="fa-solid fa-book tutor-card-i"></i> {{tutordetails.subjects.join(', ')}} </span>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex">
+                                <span class="tutor-card-span">{{tutordetails.charges}}</span>
+                                <span class="tutor-card-span"> {{tutordetails.class}}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

@@ -3,3 +3,82 @@
 body {
     margin: 0px
 }
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    // font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.login_popup_panelclass mat-dialog-container {
+    backdrop-filter: blur(10px);
+    /* Blur effect for the whole popup background */
+    transition: backdrop-filter 0.3s ease;
+}
+
+.create_login_backdrop_class {
+    backdrop-filter: blur(3px) !important;
+    /* Blur effect for the whole popup background */
+    //transition: backdrop-filter 0.3s ease;
+}
+
+.btn {
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: capitalize;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: 1px solid;
+    position: relative;
+    z-index: 1;
+    transition: 0.2s ease;
+    font-weight: 600;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+.btn-primary {
+    background: #DE6262;
+    color: #fff;
+    border-color: #DE6262;
+}
+
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary.active {
+    background: #cc0036 !important;
+    border-color: #cc0036 !important;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: #DE6262 !important;
+    border-color: #DE6262;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary.focus,
+.btn-outline-primary.active {
+    background: #cc0036 !important;
+    border-color: #cc0036 !important;
+    color: #fff !important;
+}

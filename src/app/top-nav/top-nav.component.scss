@@ -1,0 +1,275 @@
+.menusVisible {}
+
+.menuAction {
+    display: flex;
+    grid-gap: 20px;
+    justify-content: center;
+    // flex-direction: column-reverse;
+}
+
+.main-header {
+    background: #F5EBEB;
+    position: sticky;
+    width: 100%;
+}
+
+.menuHide {
+    display: none !important;
+}
+
+.menu-align {
+    display: flex;
+    grid-gap: 20px;
+    ;
+}
+
+.scrolled {
+    background: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    position: fixed;
+}
+
+nav.scrolled {
+    background: #333 !important;
+    /* Change to your desired color */
+    transition: background-color 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    // background-color: #F5EBEB;
+    // color: white;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    /* Ensure it stays on top */
+    transition: top 0.3s;
+    // height: 100px;
+    z-index: 1000;
+    background: #F5EBEB;
+}
+
+.nav-left .logo {
+    height: 100px;
+}
+
+.nav-right {
+    display: flex;
+    grid-gap: 10px;
+    // background-color: #F5EBEB;
+    // color: white;
+    // border: none;
+    // padding: 10px 20px;
+    // margin-left: 10px;
+    // cursor: pointer;
+}
+
+.nav-link {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+li.nav-item {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.nav-right .nav-btn:hover {
+    background-color: #F5EBEB;
+}
+
+// /* Sticky class */
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.card-header {
+    background: #fff;
+}
+
+.toggle-sidebar-btn {
+    font-size: 30px;
+    padding-left: 20px;
+    cursor: pointer;
+    color: #DE6262;
+    top: -2px;
+    text-align: center;
+}
+
+.header {
+    transition: all 0.5s;
+    z-index: 997;
+    height: 60px;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+    background-color: #fff;
+    padding-left: 20px;
+}
+
+.btn {
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    text-transform: capitalize;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: 1px solid;
+    position: relative;
+    z-index: 1;
+    transition: 0.2s ease;
+    font-weight: 600;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+.btn-primary {
+    background: #DE6262;
+    color: #fff;
+    border-color: #DE6262;
+}
+
+.btn-primary:active,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary.active {
+    background: #cc0036 !important;
+    border-color: #cc0036 !important;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    color: #DE6262 !important;
+    border-color: #DE6262;
+}
+
+.btn-outline-primary:active,
+.btn-outline-primary:hover,
+.btn-outline-primary:focus,
+.btn-outline-primary.focus,
+.btn-outline-primary.active {
+    background: #cc0036 !important;
+    border-color: #cc0036 !important;
+    color: #fff !important;
+}
+
+.login_popup_panelclass mat-dialog-container {
+    backdrop-filter: blur(10px) !important;
+    /* Blur effect for the whole popup background */
+    transition: backdrop-filter 0.3s ease;
+}
+
+.create_login_backdrop_class {
+    backdrop-filter: blur(10px) !important;
+    /* Blur effect for the whole popup background */
+    transition: backdrop-filter 0.3s ease;
+}
+
+// // test css for menus  below css for testing menus 
+.nav-bar {
+    display: flex;
+    align-items: center;
+    background-color: #F5EBEB;
+    //background: #F5EBEB;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+.menu li {
+    color: #234567;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+button.profile,
+button.sign-out {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.profile {
+    background-color: #f4f4f4;
+    color: #234567;
+}
+
+button.sign-out {
+    background-color: #888;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+    .menu.open {
+        display: flex;
+    }
+    .menu-button {
+        display: block;
+    }
+    .menu ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .menu li {
+        padding: 10px 0;
+    }
+    .actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

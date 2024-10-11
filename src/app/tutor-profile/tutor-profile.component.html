@@ -1,0 +1,251 @@
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12"></div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header" style="display: grid">
+                        <div>
+                            <span class="update-btn" (click)="updateTutorDetails()">
+                                <i class="fa-solid fa-pen-to-square mr-5" (click)="updateTutorProfile()" ></i>Update </span>
+                        </div>
+                        <div class="rounded-circle justify-content-center align-items-center text-center mb-10">
+                            <img class="shadow-1-strong mb-2 rounded-circle" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp" alt="avatar" style="width: 150px;" />
+                        </div>
+                        <div class="justify-content-center align-items-center text-center mb-10">
+                            <h6>{{profileData.name}}</h6>
+                            <span class="tutor-verify-span"><i class="fa-solid fa-circle-exclamation"></i> Identity Not
+                                Verified</span> <br> <span class="tutor-verify-link"> <a href=""> Verify Now </a></span>
+                        </div>
+
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <span class="tutor-name-span"><i class="fa fa-envelope mr-10"></i>Email </span> <a class="tutor-verify-link fr" href=""> Verify Now </a>
+                            <p>{{profileData.email}}</p>
+
+                        </div>
+                        <div>
+                            <span class="tutor-name-span"><i class="fa fa-phone mr-10"></i>Phone</span>
+                            <span class="tutor-a-verified fr"><i class="fa-solid fa-circle-check"></i> Verified </span>
+                            <p>{{profileData.phone_number}}</p>
+
+                        </div>
+                        <div>
+                            <span class="tutor-name-span"><i class="fa-solid fa-venus-mars mr-10"></i>Gender</span>
+                            <p>{{profileData.gender}}</p>
+
+                        </div>
+
+                        <div>
+                            <span class="tutor-name-span"><i class="fa-solid fa-location-dot mr-10"></i>Location</span>
+                            <p>{{profileData.location}}</p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="col-md-8">
+
+                <div class="card">
+                    <div class="card-header bg-main-light">
+                        <ul class="nav tutor-nav">
+                            <li class="tutor-profile-tab" [ngClass]="{ 'active': selectedOverViewTab }" (click)="ViewSpecificTab('overview')"><a>Overview</a></li>
+                            <li class="tutor-profile-tab" [ngClass]="{ 'active': !selectedOverViewTab }" (click)="ViewSpecificTab('review')"><a>Reviews</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="card-body m-0 p-0">
+                        <div class="row m-0 p-0" *ngIf="selectedOverViewTab">
+
+                            <div class="col-12 mb-4" style="border-bottom: 5px solid #f5ebeb">
+                                <div class="row p-25 m-0">
+                                    <div class="col-12">
+                                        <span class="update-btn" style="margin-top: -10px" (click)="updateTutorDetails()"><i
+                                                class="fa-solid fa-pen-to-square mr-5"></i>Update </span>
+                                        <h6>Tutoring Details</h6>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <span class="tutor-name-span"><i class="fa-solid fa-house mr-10"></i>Mode</span>
+
+                                        <p>{{profileData.tutor_type}}</p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <span class="tutor-name-span"><i
+                                                class="fa-solid fa-book mr-10"></i>Subjects</span>
+
+                                        <p>{{profileData.subjects.join(', ' )}}</p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <span class="tutor-name-span"><i
+                                                class="fa-solid fa-book-open-reader mr-10"></i>Classes</span>
+
+                                        <p>{{profileData.class}}</p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <span class="tutor-name-span"><i
+                                                class="fa-solid fa-graduation-cap mr-10"></i>Boards</span>
+
+                                        <p>{{profileData.board}}</p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <span class="tutor-name-span"><i
+                                                class="fa-solid fa-business-time mr-10"></i>Experience</span>
+
+                                        <p>{{profileData.experiance}}</p>
+                                    </div>
+                                    <div class="col-md-6 col-sm-6">
+                                        <span class="tutor-name-span"><i
+                                                class="fa-solid fa-language mr-10"></i>Languages</span>
+
+                                        <p>{{profileData.languages.join(', ')}}</p>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12">
+                                        <span class="tutor-name-span"><i
+                                                class="fa-solid fa-address-card mr-10"></i>About</span>
+
+                                        <p>{{profileData.description}} </p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="col-12 mb-4 ql" style="border-bottom: 5px solid #f5ebeb">
+                                <div class="row m-0">
+                                    <div class="col-12">
+                                        <span class="update-btn" style="margin-top: -10px"><i
+                                                class="fa-solid fa-circle-plus mr-5"></i>Add</span>
+                                        <h6>Qualification Details</h6>
+                                    </div>
+                                    <div>
+
+
+                                        <div class="qualification">
+                                            <!-- <form [formGroup]="qualificationsForm" (ngSubmit)="onSubmit()">
+                                                <h3>Graduation</h3>
+                                                <div>
+                                                    <label>Degree:</label>
+                                                    <input formControlName="graduationDegree" type="text" />
+                                                </div>
+                                                <div>
+                                                    <label>Passing Year:</label>
+                                                    <input formControlName="graduationYear" type="number" />
+                                                </div>
+                                                <div>
+                                                    <label>Total Marks:</label>
+                                                    <input formControlName="graduationTotalMarks" type="number" />
+                                                </div>
+                                                <div>
+                                                    <label>Marks Obtained:</label>
+                                                    <input formControlName="graduationMarksObtained" type="number" />
+                                                </div>
+
+                                                <h3>Post-Graduation</h3>
+                                                <div>
+                                                    <label>Degree:</label>
+                                                    <input formControlName="postGraduationDegree" type="text" />
+                                                </div>
+                                                <div>
+                                                    <label>Passing Year:</label>
+                                                    <input formControlName="postGraduationYear" type="number" />
+                                                </div>
+                                                <div>
+                                                    <label>Total Marks:</label>
+                                                    <input formControlName="postGraduationTotalMarks" type="number" />
+                                                </div>
+                                                <div>
+                                                    <label>Marks Obtained:</label>
+                                                    <input formControlName="postGraduationMarksObtained" type="number" />
+                                                </div>
+
+                                                <div class="actions">
+                                                    <button type="submit" [disabled]="qualificationsForm.invalid">Update</button>
+                                                </div>
+                                            </form> -->
+
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>Degree</th>
+                                                        <th>Passing Year</th>
+                                                        <th>Total Marks</th>
+                                                        <th>Marks Obtained</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let qul of tutorQualifications">
+                                                        <td> {{qul.degree}}</td>
+                                                        <td> {{qul.passingYear}} </td>
+                                                        <td> {{qul.totalMarks}} </td>
+                                                        <td> {{qul.marksObtained}} </td>
+                                                        <td>
+                                                            <mat-icon>edit</mat-icon>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mb-4">
+                                <div class="row p-25 m-0">
+                                    <div class="col-12">
+                                        <span class="update-btn" style="margin-top: -10px"><i
+                                                class="fa-solid fa-circle-plus mr-5"></i>Add</span>
+                                        <h6>Work Experience</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="qualification">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Company</th>
+                                                    <th>From</th>
+                                                    <th>To</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let qul of tutorExperiance">
+                                                    <td> {{qul.company}}</td>
+                                                    <td> {{qul.from}} </td>
+                                                    <td> {{qul.to}} </td>
+
+                                                    <td>
+                                                        <mat-icon>edit</mat-icon>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <div class="row" *ngIf="!selectedOverViewTab">
+                            review option here
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
